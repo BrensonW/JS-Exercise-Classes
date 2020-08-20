@@ -47,8 +47,9 @@ class Person {
     this.stomach = [];
   }
   
-  eat(food){
-    if (this.stomach.length < 10) this.stomach.push(food);
+  eat(someFood){
+    if (this.stomach.length < 10) 
+    this.stomach.push(someFood);
   }
   
   poop(){
@@ -57,16 +58,13 @@ class Person {
   
   
   toString(){
-    return `${this.name} is ${this.age}`
+    return `${this.name} is ${this.age}`;
   }
 
 }
 
 let newName = new Person("Jan", 27);
-// console.log(newName);
-// newName.eat("Ham");
-// console.log(newName.stomach);
-// console.log(newName.toString);
+
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -82,7 +80,7 @@ let newName = new Person("Jan", 27);
 */
 
 class Car {
-  constructor(model,milesPerGallon){
+  constructor(model, milesPerGallon){
     this.model = model;
     this.milesPerGallon = milesPerGallon;
     this.tank = 0;
@@ -91,13 +89,13 @@ class Car {
   }
 
   fill(gallons) {
-    return (this.tank += gallons); 
+  return this.tank += gallons; 
   }
 
   drive(distance) {
-    if (this.tank > distance/ this.milesPerGallon) {
-  this.odometer += distance; 
-  this.tank -= distance / this.milesPerGallon;  
+    if (this.tank > distance/this.milesPerGallon) {
+  this.odometer += distance;
+  this.tank -= distance/this.milesPerGallon;
 } else{
   this.odometer += this.tank * this.milesPerGallon;
     this.tank = 0;
@@ -129,14 +127,12 @@ class Lambdasian {
   }
 
   speak(){
-    return `Hello my name is ${this.name}, I am from ${this.location}`
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
-
- const myself = new Lambdasian({name: 'Brenson', age: 21, location: 'Carson City'})
-console.log(myself.speak());
-
 }
+ const myself = new Lambdasian({name: 'Brenson', age: 21, location: 'Carson City',});
 
+console.log(myself.speak());
 /*
   TASK 4
     - Write an Instructor class extending Lambdasian.
@@ -248,7 +244,7 @@ class ProjectManager extends Instructor {
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
-class Student extends Lambdasian {
+class Student1 extends Lambdasian {
   constructor(attr){
     super(attr);
     this.previousBackground = attr.previousBackground;
